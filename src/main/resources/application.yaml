@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: student-registration-api
+
+  datasource:
+    url: jdbc:postgresql://pg-3c7575f2-amineyvazov368-f930.i.aivencloud.com:13847/defaultdb?sslmode=require
+    username: avnadmin
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 30000
+      connection-timeout: 30000
+      max-lifetime: 1800000
+      data-source-properties:
+        ssl: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
